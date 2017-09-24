@@ -21,7 +21,7 @@ define(['jquery'],function ($) {
         },
         //给侧边导航栏设置高亮显示
         setMenu: function (path) {
-            $(".aside .navs a[href='"+path+"']").addClass("active");
+            $(".aside .navs a[href='"+path+"']").addClass("active").parent().parent().show();
 
         }
     }
