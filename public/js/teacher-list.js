@@ -1,7 +1,9 @@
 /**
  * Created by acer on 2017/9/19.
  */
-define(['jquery','template','bootstrap'],function ($,template) {
+define(['jquery','template','util','bootstrap'],function ($,template,util) {
+    util.setMenu(location.pathname);
+    //console.log(location.pathname)
     $.ajax({
         url:"/api/teacher",
         type:"get",

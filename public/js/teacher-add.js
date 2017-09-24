@@ -2,7 +2,9 @@
  * Created by acer on 2017/9/21.
  */
 define(['jquery','template','util','datepicker','language','validate','form'],function ($,template,util) {
-   var tcId = util.qs('tc_id');
+    util.setMenu('/teacher/teacher_list');
+
+    var tcId = util.qs('tc_id');
     if(tcId){
         $.ajax({
            url:'/api/teacher/edit',
