@@ -28,8 +28,8 @@ define(['jquery','util','template'], function ($,util,template) {
                     data:{cg_id:cgId},
                     success: function (data) {
                         //console.log(data)
-                        var tpl = '<option value="">请选择</option>{{each list}}<option value="{{$value.cg_id}}">{{$value.cg_name}}</option>{{/each}}';
-                        $("#seconeType").html(template.render(tpl,{list:data.result}));
+                        var tpl = '<option value="">请选择</option>{{each result}}<option value="{{$value.cg_id}}">{{$value.cg_name}}</option>{{/each}}';
+                        $("#secondType").html(template.render(tpl,data));
                     }
                 })
             });
