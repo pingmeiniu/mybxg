@@ -44,13 +44,13 @@
             <!-- 步聚 -->
             <ul class="forwards list-unstyled">
                 <li>
-                    <a href="/course/course_basic" class="active">
+                    <a href="/course/course_basic?cs_id={{cs_id}}" class="active">
                         <b>1</b>
                         基本信息
                     </a>
                 </li>
                 <li>
-                    <a href="/course/course_add_step2">
+                    <a href="/course/course_picture">
                         <b>2</b>
                         课程图片
                     </a>
@@ -68,26 +68,26 @@
                 <div class="title">
                     <h5>基本信息 <small>BASIC INFORMATION</small></h5>
                 </div>
-                <form action="" class="basic form-horizontal">
+                <form id="basicForm" class="basic form-horizontal">
                     <div class="form-group">
                         <label for="" class="col-xs-2 control-label">标题</label>
                         <div class="col-xs-8">
-                            <input type="text" class="form-control input-sm" value="{{cs_name}}">
+                            <input name="cs_name" type="text" class="form-control input-sm" value="{{cs_name}}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="" class="col-xs-2 control-label">课程描述</label>
                         <div class="col-xs-8 ckeditor">
-                            <textarea value="{{cs_brief}}" name="" rows="15" class="form-control input-sm"></textarea>
+                            <textarea value="{{cs_brief}}" name="cs_brief" rows="15" class="form-control input-sm"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="" class="col-xs-2 control-label">讲师</label>
                         <div class="col-xs-8">
-                            <select name="" class="form-control input-sm">
+                            <select name="cs_tc_id" class="form-control input-sm">
                                 <option value="0">请选择</option>
                                 {{each teacher}}
-                                <option {{if cs_tc_id==$value.tc_id}}selected{{/if}} value="">{{$value.tc_name}}</option>
+                                <option {{if cs_tc_id==$value.tc_id}}selected{{/if}} value="{{$value.tc_id}}">{{$value.tc_name}}</option>
                                 {{/each}}
                             </select>
                         </div>
@@ -103,7 +103,7 @@
                                     {{/each}}
                                 {{/if}}
                             </select>
-                            <select id="secondType" name="" class="form-control input-sm">
+                            <select id="secondType" name="cs_cg_id" class="form-control input-sm">
                                 <option value="">请选择</option>
                                 {{if category}}
                                     {{each category.childs}}
@@ -116,13 +116,13 @@
                     <div class="form-group">
                         <label for="" class="col-xs-2 control-label">标签</label>
                         <div class="col-xs-8">
-                            <input value="{{cs_tags}}" type="text" class="form-control input-sm">
+                            <input name="cs_tags" value="{{cs_tags}}" type="text" class="form-control input-sm">
                             <p class="help-block">将会应用于按标签搜索课程、相关课程的提取等</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-10">
-                            <a href="./course_add_step2.html" class="btn btn-success btn-sm pull-right">保 存</a>
+                            <input type="submit" value="保存" class="btn btn-success btn-sm pull-right"/>
                         </div>
                     </div>
                 </form>
