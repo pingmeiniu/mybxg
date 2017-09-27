@@ -78,6 +78,11 @@ define(['jquery','template','util','uploadify','jcrop','form'], function ($,temp
                     this.newSelection();
                     this.setSelect([x,y,w,h]);
 
+                    $('.jcrop-thumb').css({
+                        top : 0,
+                        left : 0
+                    });
+
                     img.parent().on("cropstart cropmove cropend", function (a,b,c) {
                         var inputs = $("#cropForm").children();
                         //console.log(c)

@@ -1,7 +1,7 @@
 /**
  * Created by acer on 2017/9/24.
  */
-define(['jquery','util','template'], function ($,util,template) {
+define(['jquery','util','template','state'], function ($,util,template) {
     util.setMenu(location.pathname);
     $.ajax({
         url:'/api/course',

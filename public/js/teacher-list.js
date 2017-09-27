@@ -1,7 +1,7 @@
 /**
  * Created by acer on 2017/9/19.
  */
-define(['jquery','template','util','bootstrap'],function ($,template,util) {
+define(['jquery','template','util','bootstrap','state'],function ($,template,util) {
     util.setMenu(location.pathname);
     //console.log(location.pathname)
     $.ajax({

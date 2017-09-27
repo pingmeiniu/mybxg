@@ -1,7 +1,7 @@
 /**
  * Created by acer on 2017/9/24.
  */
-define(['jquery','util','template','validate','form'], function ($,util,template) {
+define(['jquery','util','template','validate','form','state'], function ($,util,template) {
     util.setMenu('/course/course_add');
     var csId = util.qs('cs_id');
     var flag = util.qs('flag');
